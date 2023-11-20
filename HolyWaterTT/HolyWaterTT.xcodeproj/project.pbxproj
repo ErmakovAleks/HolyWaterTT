@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		646A6DFC4DB1F3856CE4BEFA /* Pods_HolyWaterTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C3EB7C5BCEE54928DD9C08 /* Pods_HolyWaterTT.framework */; };
+		D910027B2B0BC57A001C4C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910027A2B0BC57A001C4C61 /* AppDelegate.swift */; };
+		D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910027E2B0BC57A001C4C61 /* ViewController.swift */; };
+		D91002842B0BC57B001C4C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91002832B0BC57B001C4C61 /* Assets.xcassets */; };
+		D91002872B0BC57B001C4C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91002852B0BC57B001C4C61 /* LaunchScreen.storyboard */; };
+		D910028F2B0BC8D8001C4C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */; };
+		D99822DE2B0BD94400F65D8C /* HolyLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */; };
+		D99822E02B0BD96500F65D8C /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DF2B0BD96500F65D8C /* Book.swift */; };
+		D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */; };
+		D99822E52B0BDF1400F65D8C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822E42B0BDF1400F65D8C /* DataService.swift */; };
+		D99822E92B0BE25600F65D8C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822E82B0BE25600F65D8C /* RequestError.swift */; };
+		D99822EB2B0BE29000F65D8C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822EA2B0BE29000F65D8C /* HTTPMethod.swift */; };
+		D99822ED2B0BE2B700F65D8C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822EC2B0BE2B700F65D8C /* NetworkService.swift */; };
+		D99822F02B0BE31000F65D8C /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822EF2B0BE31000F65D8C /* Events.swift */; };
+		D99822F22B0BE3C000F65D8C /* NetworkSessionProcessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822F12B0BE3C000F65D8C /* NetworkSessionProcessable.swift */; };
+		D99822F42B0BE3ED00F65D8C /* URLContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822F32B0BE3ED00F65D8C /* URLContainable.swift */; };
+		D99822F62B0BE41600F65D8C /* NetworkServiceContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822F52B0BE41600F65D8C /* NetworkServiceContainable.swift */; };
+		D99822F92B0BE4B300F65D8C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822F82B0BE4B300F65D8C /* BaseView.swift */; };
+		D99822FB2B0BE54000F65D8C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822FA2B0BE54000F65D8C /* BaseViewModel.swift */; };
+		D99822FD2B0BE58600F65D8C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */; };
+		D99822FF2B0BE5AB00F65D8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822FE2B0BE5AB00F65D8C /* Constants.swift */; };
+		D99823042B0BEA2000F65D8C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A74D38845C0D8D2FFA03FC56 /* Pods-HolyWaterTT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HolyWaterTT.release.xcconfig"; path = "Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT.release.xcconfig"; sourceTree = "<group>"; };
+		C2C3EB7C5BCEE54928DD9C08 /* Pods_HolyWaterTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HolyWaterTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D91002772B0BC57A001C4C61 /* HolyWaterTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolyWaterTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D910027A2B0BC57A001C4C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D910027E2B0BC57A001C4C61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D91002832B0BC57B001C4C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D91002862B0BC57B001C4C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D91002882B0BC57B001C4C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyLibrary.swift; sourceTree = "<group>"; };
+		D99822DF2B0BD96500F65D8C /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBunnerSlide.swift; sourceTree = "<group>"; };
+		D99822E42B0BDF1400F65D8C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D99822E82B0BE25600F65D8C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		D99822EA2B0BE29000F65D8C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D99822EC2B0BE2B700F65D8C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D99822EF2B0BE31000F65D8C /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		D99822F12B0BE3C000F65D8C /* NetworkSessionProcessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProcessable.swift; sourceTree = "<group>"; };
+		D99822F32B0BE3ED00F65D8C /* URLContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLContainable.swift; sourceTree = "<group>"; };
+		D99822F52B0BE41600F65D8C /* NetworkServiceContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceContainable.swift; sourceTree = "<group>"; };
+		D99822F82B0BE4B300F65D8C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D99822FA2B0BE54000F65D8C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		D99822FE2B0BE5AB00F65D8C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		DD3B1A66EE186DBF1DCB97A4 /* Pods-HolyWaterTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HolyWaterTT.debug.xcconfig"; path = "Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D91002742B0BC57A001C4C61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				646A6DFC4DB1F3856CE4BEFA /* Pods_HolyWaterTT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28B8F7E1B701BED38716147E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD3B1A66EE186DBF1DCB97A4 /* Pods-HolyWaterTT.debug.xcconfig */,
+				A74D38845C0D8D2FFA03FC56 /* Pods-HolyWaterTT.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D910026E2B0BC57A001C4C61 = {
+			isa = PBXGroup;
+			children = (
+				D91002792B0BC57A001C4C61 /* HolyWaterTT */,
+				D91002782B0BC57A001C4C61 /* Products */,
+				28B8F7E1B701BED38716147E /* Pods */,
+				DE6FE0CF18572D11674595A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D91002782B0BC57A001C4C61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D91002772B0BC57A001C4C61 /* HolyWaterTT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D91002792B0BC57A001C4C61 /* HolyWaterTT */ = {
+			isa = PBXGroup;
+			children = (
+				D99823022B0BE9FC00F65D8C /* Extensions */,
+				D99823012B0BE6A600F65D8C /* Coordinators */,
+				D99823002B0BE69900F65D8C /* FlowComponents */,
+				D99822F72B0BE45C00F65D8C /* BaseComponents */,
+				D99822EE2B0BE2FC00F65D8C /* Protocols */,
+				D99822E32B0BDEEB00F65D8C /* Managers */,
+				D99822DC2B0BD92900F65D8C /* Models */,
+				D91002912B0BCA61001C4C61 /* Application */,
+				D91002902B0BC97B001C4C61 /* SupportingFiles */,
+				D910027E2B0BC57A001C4C61 /* ViewController.swift */,
+			);
+			path = HolyWaterTT;
+			sourceTree = "<group>";
+		};
+		D91002902B0BC97B001C4C61 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D91002852B0BC57B001C4C61 /* LaunchScreen.storyboard */,
+				D91002832B0BC57B001C4C61 /* Assets.xcassets */,
+				D91002882B0BC57B001C4C61 /* Info.plist */,
+				D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D91002912B0BCA61001C4C61 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D910027A2B0BC57A001C4C61 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D99822DC2B0BD92900F65D8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */,
+				D99822DF2B0BD96500F65D8C /* Book.swift */,
+				D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D99822E32B0BDEEB00F65D8C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D99822E72B0BE23C00F65D8C /* NetworkService */,
+				D99822E62B0BE22F00F65D8C /* DataService */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D99822E62B0BE22F00F65D8C /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				D99822E42B0BDF1400F65D8C /* DataService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		D99822E72B0BE23C00F65D8C /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				D99822E82B0BE25600F65D8C /* RequestError.swift */,
+				D99822EA2B0BE29000F65D8C /* HTTPMethod.swift */,
+				D99822EC2B0BE2B700F65D8C /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		D99822EE2B0BE2FC00F65D8C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D99822EF2B0BE31000F65D8C /* Events.swift */,
+				D99822F12B0BE3C000F65D8C /* NetworkSessionProcessable.swift */,
+				D99822F32B0BE3ED00F65D8C /* URLContainable.swift */,
+				D99822F52B0BE41600F65D8C /* NetworkServiceContainable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D99822F72B0BE45C00F65D8C /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D99822F82B0BE4B300F65D8C /* BaseView.swift */,
+				D99822FA2B0BE54000F65D8C /* BaseViewModel.swift */,
+				D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */,
+				D99822FE2B0BE5AB00F65D8C /* Constants.swift */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		D99823002B0BE69900F65D8C /* FlowComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlowComponents;
+			sourceTree = "<group>";
+		};
+		D99823012B0BE6A600F65D8C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D99823022B0BE9FC00F65D8C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE6FE0CF18572D11674595A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2C3EB7C5BCEE54928DD9C08 /* Pods_HolyWaterTT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D91002762B0BC57A001C4C61 /* HolyWaterTT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D910028B2B0BC57B001C4C61 /* Build configuration list for PBXNativeTarget "HolyWaterTT" */;
+			buildPhases = (
+				20E23AB9652F904A1EF78D02 /* [CP] Check Pods Manifest.lock */,
+				D91002732B0BC57A001C4C61 /* Sources */,
+				D91002742B0BC57A001C4C61 /* Frameworks */,
+				D91002752B0BC57A001C4C61 /* Resources */,
+				493E7D0AA0880662E10096F7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HolyWaterTT;
+			productName = HolyWaterTT;
+			productReference = D91002772B0BC57A001C4C61 /* HolyWaterTT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D910026F2B0BC57A001C4C61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D91002762B0BC57A001C4C61 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = D91002722B0BC57A001C4C61 /* Build configuration list for PBXProject "HolyWaterTT" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D910026E2B0BC57A001C4C61;
+			productRefGroup = D91002782B0BC57A001C4C61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D91002762B0BC57A001C4C61 /* HolyWaterTT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D91002752B0BC57A001C4C61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91002872B0BC57B001C4C61 /* LaunchScreen.storyboard in Resources */,
+				D91002842B0BC57B001C4C61 /* Assets.xcassets in Resources */,
+				D910028F2B0BC8D8001C4C61 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20E23AB9652F904A1EF78D02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HolyWaterTT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		493E7D0AA0880662E10096F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D91002732B0BC57A001C4C61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99822E92B0BE25600F65D8C /* RequestError.swift in Sources */,
+				D99822FF2B0BE5AB00F65D8C /* Constants.swift in Sources */,
+				D99822F62B0BE41600F65D8C /* NetworkServiceContainable.swift in Sources */,
+				D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */,
+				D99822E52B0BDF1400F65D8C /* DataService.swift in Sources */,
+				D99822E02B0BD96500F65D8C /* Book.swift in Sources */,
+				D99822F02B0BE31000F65D8C /* Events.swift in Sources */,
+				D99823042B0BEA2000F65D8C /* UIColor+Extensions.swift in Sources */,
+				D99822F22B0BE3C000F65D8C /* NetworkSessionProcessable.swift in Sources */,
+				D99822ED2B0BE2B700F65D8C /* NetworkService.swift in Sources */,
+				D99822EB2B0BE29000F65D8C /* HTTPMethod.swift in Sources */,
+				D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */,
+				D910027B2B0BC57A001C4C61 /* AppDelegate.swift in Sources */,
+				D99822FB2B0BE54000F65D8C /* BaseViewModel.swift in Sources */,
+				D99822F92B0BE4B300F65D8C /* BaseView.swift in Sources */,
+				D99822F42B0BE3ED00F65D8C /* URLContainable.swift in Sources */,
+				D99822DE2B0BD94400F65D8C /* HolyLibrary.swift in Sources */,
+				D99822FD2B0BE58600F65D8C /* BaseCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D91002852B0BC57B001C4C61 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D91002862B0BC57B001C4C61 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D91002892B0BC57B001C4C61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D910028A2B0BC57B001C4C61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D910028C2B0BC57B001C4C61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD3B1A66EE186DBF1DCB97A4 /* Pods-HolyWaterTT.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 766FVMV63R;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyWaterTT/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D910028D2B0BC57B001C4C61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74D38845C0D8D2FFA03FC56 /* Pods-HolyWaterTT.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 766FVMV63R;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyWaterTT/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D91002722B0BC57A001C4C61 /* Build configuration list for PBXProject "HolyWaterTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D91002892B0BC57B001C4C61 /* Debug */,
+				D910028A2B0BC57B001C4C61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D910028B2B0BC57B001C4C61 /* Build configuration list for PBXNativeTarget "HolyWaterTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D910028C2B0BC57B001C4C61 /* Debug */,
+				D910028D2B0BC57B001C4C61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D910026F2B0BC57A001C4C61 /* Project object */;
+}
