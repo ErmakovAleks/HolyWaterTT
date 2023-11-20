@@ -36,8 +36,19 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-Fv-FSp">
                                         <rect key="frame" x="0.0" y="117" width="393" height="32"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBar" translatesAutoresizingMaskIntoConstraints="NO" id="hvW-tG-yHz">
+                                                <rect key="frame" x="50" y="26" width="293" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="6" id="i32-Ya-bde"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hvW-tG-yHz" secondAttribute="bottom" id="WBE-ga-DPP"/>
+                                            <constraint firstAttribute="trailing" secondItem="hvW-tG-yHz" secondAttribute="trailing" constant="50" id="bsg-Lg-8CQ"/>
+                                            <constraint firstItem="hvW-tG-yHz" firstAttribute="leading" secondItem="d8T-Fv-FSp" secondAttribute="leading" constant="50" id="uqw-ql-KDD"/>
                                             <constraint firstAttribute="height" constant="32" id="zdL-rl-Xt5"/>
                                         </constraints>
                                     </view>
@@ -68,6 +79,7 @@
     </scenes>
     <resources>
         <image name="launch" width="375" height="667"/>
+        <image name="progressBar" width="274" height="6"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
