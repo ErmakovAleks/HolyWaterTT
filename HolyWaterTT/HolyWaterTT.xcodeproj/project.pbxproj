@@ -29,6 +29,13 @@
 		D99822FD2B0BE58600F65D8C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */; };
 		D99822FF2B0BE5AB00F65D8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822FE2B0BE5AB00F65D8C /* Constants.swift */; };
 		D99823042B0BEA2000F65D8C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */; };
+		D99823082B0BFAD600F65D8C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823072B0BFAD600F65D8C /* MainCoordinator.swift */; };
+		D998230A2B0BFC5100F65D8C /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823092B0BFC5100F65D8C /* ChildCoordinator.swift */; };
+		D998230C2B0BFC9500F65D8C /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998230B2B0BFC9500F65D8C /* DashboardCoordinator.swift */; };
+		D99823102B0BFE0100F65D8C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998230F2B0BFE0100F65D8C /* DashboardViewModel.swift */; };
+		D99823122B0BFE5C00F65D8C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823112B0BFE5C00F65D8C /* DashboardView.swift */; };
+		D99823152B0BFF7000F65D8C /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823142B0BFF7000F65D8C /* LaunchView.swift */; };
+		D99823172B0C045A00F65D8C /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99823162B0C045A00F65D8C /* UIFont+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +64,13 @@
 		D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		D99822FE2B0BE5AB00F65D8C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		D99823072B0BFAD600F65D8C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D99823092B0BFC5100F65D8C /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinator.swift; sourceTree = "<group>"; };
+		D998230B2B0BFC9500F65D8C /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		D998230F2B0BFE0100F65D8C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		D99823112B0BFE5C00F65D8C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		D99823142B0BFF7000F65D8C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		D99823162B0C045A00F65D8C /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		DD3B1A66EE186DBF1DCB97A4 /* Pods-HolyWaterTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HolyWaterTT.debug.xcconfig"; path = "Target Support Files/Pods-HolyWaterTT/Pods-HolyWaterTT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +204,7 @@
 				D99822FA2B0BE54000F65D8C /* BaseViewModel.swift */,
 				D99822FC2B0BE58600F65D8C /* BaseCoordinator.swift */,
 				D99822FE2B0BE5AB00F65D8C /* Constants.swift */,
+				D99823092B0BFC5100F65D8C /* ChildCoordinator.swift */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -197,6 +212,7 @@
 		D99823002B0BE69900F65D8C /* FlowComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D998230D2B0BFD8700F65D8C /* DashboardFlow */,
 			);
 			path = FlowComponents;
 			sourceTree = "<group>";
@@ -204,6 +220,8 @@
 		D99823012B0BE6A600F65D8C /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				D99823072B0BFAD600F65D8C /* MainCoordinator.swift */,
+				D998230B2B0BFC9500F65D8C /* DashboardCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -212,8 +230,35 @@
 			isa = PBXGroup;
 			children = (
 				D99823032B0BEA2000F65D8C /* UIColor+Extensions.swift */,
+				D99823162B0C045A00F65D8C /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D998230D2B0BFD8700F65D8C /* DashboardFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D998230E2B0BFDCE00F65D8C /* DashboardView */,
+			);
+			path = DashboardFlow;
+			sourceTree = "<group>";
+		};
+		D998230E2B0BFDCE00F65D8C /* DashboardView */ = {
+			isa = PBXGroup;
+			children = (
+				D998230F2B0BFE0100F65D8C /* DashboardViewModel.swift */,
+				D99823112B0BFE5C00F65D8C /* DashboardView.swift */,
+				D99823132B0BFF3500F65D8C /* Private */,
+			);
+			path = DashboardView;
+			sourceTree = "<group>";
+		};
+		D99823132B0BFF3500F65D8C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				D99823142B0BFF7000F65D8C /* LaunchView.swift */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		DE6FE0CF18572D11674595A6 /* Frameworks */ = {
@@ -340,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99822E92B0BE25600F65D8C /* RequestError.swift in Sources */,
+				D99823152B0BFF7000F65D8C /* LaunchView.swift in Sources */,
 				D99822FF2B0BE5AB00F65D8C /* Constants.swift in Sources */,
 				D99822F62B0BE41600F65D8C /* NetworkServiceContainable.swift in Sources */,
 				D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */,
@@ -351,9 +397,15 @@
 				D99822ED2B0BE2B700F65D8C /* NetworkService.swift in Sources */,
 				D99822EB2B0BE29000F65D8C /* HTTPMethod.swift in Sources */,
 				D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */,
+				D99823172B0C045A00F65D8C /* UIFont+Extensions.swift in Sources */,
 				D910027B2B0BC57A001C4C61 /* AppDelegate.swift in Sources */,
+				D998230C2B0BFC9500F65D8C /* DashboardCoordinator.swift in Sources */,
+				D998230A2B0BFC5100F65D8C /* ChildCoordinator.swift in Sources */,
+				D99823102B0BFE0100F65D8C /* DashboardViewModel.swift in Sources */,
 				D99822FB2B0BE54000F65D8C /* BaseViewModel.swift in Sources */,
+				D99823082B0BFAD600F65D8C /* MainCoordinator.swift in Sources */,
 				D99822F92B0BE4B300F65D8C /* BaseView.swift in Sources */,
+				D99823122B0BFE5C00F65D8C /* DashboardView.swift in Sources */,
 				D99822F42B0BE3ED00F65D8C /* URLContainable.swift in Sources */,
 				D99822DE2B0BD94400F65D8C /* HolyLibrary.swift in Sources */,
 				D99822FD2B0BE58600F65D8C /* BaseCoordinator.swift in Sources */,

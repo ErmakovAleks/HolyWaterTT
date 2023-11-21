@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .systemBackground
-        window?.rootViewController = ViewController()
+        window?.backgroundColor = .deepPurple
+        window?.rootViewController = MainCoordinator()
         window?.makeKeyAndVisible()
         
         return true
