@@ -21,13 +21,15 @@ final class DashboardCoordinator: ChildCoordinator {
     
     public let events = PublishRelay<DashboardCoordinatorOutputEvents>()
     
+    private let dataService = DataService()
+    
     // MARK: -
     // MARK: Coordinator Life Cycle
     
     override func start() {
         super.start()
         
-        let viewModel = DashboardViewModel()
+        let viewModel = DashboardViewModel(dataService: self.dataService)
         let view = DashboardView(viewModel: viewModel)
         
         viewModel.events.bind { [weak self] in

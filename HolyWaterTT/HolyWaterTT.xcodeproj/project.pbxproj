@@ -13,6 +13,11 @@
 		D91002842B0BC57B001C4C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91002832B0BC57B001C4C61 /* Assets.xcassets */; };
 		D91002872B0BC57B001C4C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91002852B0BC57B001C4C61 /* LaunchScreen.storyboard */; };
 		D910028F2B0BC8D8001C4C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */; };
+		D92E68FA2B0CFFBB000D8E88 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E68F92B0CFFBB000D8E88 /* BannerCollectionViewCell.swift */; };
+		D92E68FC2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E68FB2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift */; };
+		D92E68FE2B0D1C3D000D8E88 /* TopBannerSlideCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E68FD2B0D1C3D000D8E88 /* TopBannerSlideCellModel.swift */; };
+		D92E69002B0D1D56000D8E88 /* BookCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E68FF2B0D1D56000D8E88 /* BookCellModel.swift */; };
+		D92E69032B0D268A000D8E88 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E69022B0D268A000D8E88 /* DashboardTableViewCell.swift */; };
 		D99822DE2B0BD94400F65D8C /* HolyLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */; };
 		D99822E02B0BD96500F65D8C /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DF2B0BD96500F65D8C /* Book.swift */; };
 		D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */; };
@@ -48,6 +53,11 @@
 		D91002862B0BC57B001C4C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D91002882B0BC57B001C4C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D92E68F92B0CFFBB000D8E88 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		D92E68FB2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterSnapCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D92E68FD2B0D1C3D000D8E88 /* TopBannerSlideCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerSlideCellModel.swift; sourceTree = "<group>"; };
+		D92E68FF2B0D1D56000D8E88 /* BookCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellModel.swift; sourceTree = "<group>"; };
+		D92E69022B0D268A000D8E88 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyLibrary.swift; sourceTree = "<group>"; };
 		D99822DF2B0BD96500F65D8C /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBunnerSlide.swift; sourceTree = "<group>"; };
@@ -149,12 +159,23 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		D92E69012B0D262F000D8E88 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D92E68F92B0CFFBB000D8E88 /* BannerCollectionViewCell.swift */,
+				D92E69022B0D268A000D8E88 /* DashboardTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D99822DC2B0BD92900F65D8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */,
 				D99822DF2B0BD96500F65D8C /* Book.swift */,
 				D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */,
+				D92E68FD2B0D1C3D000D8E88 /* TopBannerSlideCellModel.swift */,
+				D92E68FF2B0D1D56000D8E88 /* BookCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,7 +277,9 @@
 		D99823132B0BFF3500F65D8C /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				D92E69012B0D262F000D8E88 /* Cells */,
 				D99823142B0BFF7000F65D8C /* LaunchView.swift */,
+				D92E68FB2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -391,10 +414,13 @@
 				D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */,
 				D99822E52B0BDF1400F65D8C /* DataService.swift in Sources */,
 				D99822E02B0BD96500F65D8C /* Book.swift in Sources */,
+				D92E68FE2B0D1C3D000D8E88 /* TopBannerSlideCellModel.swift in Sources */,
+				D92E69002B0D1D56000D8E88 /* BookCellModel.swift in Sources */,
 				D99822F02B0BE31000F65D8C /* Events.swift in Sources */,
 				D99823042B0BEA2000F65D8C /* UIColor+Extensions.swift in Sources */,
 				D99822F22B0BE3C000F65D8C /* NetworkSessionProcessable.swift in Sources */,
 				D99822ED2B0BE2B700F65D8C /* NetworkService.swift in Sources */,
+				D92E68FC2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift in Sources */,
 				D99822EB2B0BE29000F65D8C /* HTTPMethod.swift in Sources */,
 				D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */,
 				D99823172B0C045A00F65D8C /* UIFont+Extensions.swift in Sources */,
@@ -402,8 +428,10 @@
 				D998230C2B0BFC9500F65D8C /* DashboardCoordinator.swift in Sources */,
 				D998230A2B0BFC5100F65D8C /* ChildCoordinator.swift in Sources */,
 				D99823102B0BFE0100F65D8C /* DashboardViewModel.swift in Sources */,
+				D92E68FA2B0CFFBB000D8E88 /* BannerCollectionViewCell.swift in Sources */,
 				D99822FB2B0BE54000F65D8C /* BaseViewModel.swift in Sources */,
 				D99823082B0BFAD600F65D8C /* MainCoordinator.swift in Sources */,
+				D92E69032B0D268A000D8E88 /* DashboardTableViewCell.swift in Sources */,
 				D99822F92B0BE4B300F65D8C /* BaseView.swift in Sources */,
 				D99823122B0BFE5C00F65D8C /* DashboardView.swift in Sources */,
 				D99822F42B0BE3ED00F65D8C /* URLContainable.swift in Sources */,
