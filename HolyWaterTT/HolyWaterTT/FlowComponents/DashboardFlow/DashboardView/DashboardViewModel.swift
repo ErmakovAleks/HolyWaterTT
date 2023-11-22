@@ -28,6 +28,7 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
     var topBannerSlides = [TopBannerSlide]()
     var youWillLikeSection = [Int]()
     var genres = [Genre]()
+    var orderedLibrary = [(Genre, [Book])]()
     
     // MARK: -
     // MARK: Initialization
@@ -75,11 +76,14 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
             self.youWillLikeSection = $0.youWillLikeSection
             
             var availableGenres = Set<Genre>()
+            var sortedLibrary = [Genre: [Book]]()
             $0.books.forEach {
                 availableGenres.insert($0.genre)
+                sortedLibrary[$0.genre]?.append($0)
             }
             
             self.genres = Array(availableGenres)
+            self.orderedLibrary = sortedLibrary.sorted { $0.key.rawValue < $1.key.rawValue }
         }
         .disposed(by: self.disposeBag)
     }

@@ -220,15 +220,27 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
     // MARK: Prepare Dashboard
     
     private func dashboardSetup() {
+        self.dashboardTableView = UITableView()
+        self.dashboardTableView?.delegate = self
+        self.dashboardTableView?.dataSource = self
+        self.dashboardTableView?.register(
+            DashboardTableViewCell.self,
+            forCellReuseIdentifier: String(describing: DashboardTableViewCell.self)
+        )
         
+        self.view.addSubview(self.dashboardTableView ?? UIView())
     }
     
     private func dashboardStyle() {
-        
+        self.dashboardTableView?.backgroundColor = .systemBlue
     }
     
     private func dashboardLayout() {
-        
+        guard let bannerCollectionView else { return }
+        self.dashboardTableView?.snp.makeConstraints {
+            $0.horizontalEdges.bottom.equalToSuperview()
+            $0.top.equalTo(bannerCollectionView.snp.bottom)
+        }
     }
 }
 
@@ -270,9 +282,11 @@ extension DashboardView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let width = scrollView.frame.width
-        let index = Int((scrollView.contentOffset.x + width / 2) / width)
-        self.pageControl.currentPage = index % self.viewModel.topBannerSlides.count
+        if scrollView == self.bannerCollectionView {
+            let width = scrollView.frame.width
+            let index = Int((scrollView.contentOffset.x + width / 2) / width)
+            self.pageControl.currentPage = index % self.viewModel.topBannerSlides.count
+        }
     }
     
     private func scrollToMiddle(atIndex: Int, animated: Bool = true) {
@@ -295,8 +309,12 @@ extension DashboardView: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension DashboardView: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.viewModel.genres.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.orderedLibrary[section].1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
