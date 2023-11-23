@@ -9,7 +9,7 @@ import UIKit
 
 enum BookCellModelOutputEvents {
     
-    case needPoster(String, UIImageView?)
+    case needLoadPoster(String, DashboardCollectionViewCell)
 }
 
 struct BookCellModel {
@@ -48,5 +48,20 @@ struct BookCellModel {
         self.likes = likes
         self.quotes = quotes
         self.handler = handler
+    }
+    
+    static func model(from book: Book, handler: @escaping (BookCellModelOutputEvents) -> ()) -> Self {
+        return BookCellModel(
+            id: book.id,
+            name: book.name,
+            author: book.author,
+            summary: book.summary,
+            genre: book.genre,
+            coverURL: book.coverURL,
+            views: book.views,
+            likes: book.likes,
+            quotes: book.quotes,
+            handler: handler
+        )
     }
 }

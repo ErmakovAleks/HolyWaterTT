@@ -11,6 +11,7 @@ enum AppFonts: String {
     
     case georgiaBoldItalic = "Georgia Bold Italic"
     case notoSansOriyaBold = "Noto Sans Oriya Bold"
+    case notoSansOriya = "Noto Sans Oriya"
 }
 
 extension UIFont {
@@ -21,5 +22,9 @@ extension UIFont {
     
     static func notoSansOriyaBold(size: CGFloat) -> UIFont {
         UIFont(name: AppFonts.notoSansOriyaBold.rawValue, size: size) ?? .boldSystemFont(ofSize: size)
+    }
+    
+    static func notoSansOriya(size: CGFloat) -> UIFont {
+        UIFont(name: AppFonts.notoSansOriya.rawValue, size: size) ?? .systemFont(ofSize: size)
     }
 }

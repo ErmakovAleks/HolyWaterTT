@@ -18,7 +18,7 @@ final class BannerCollectionViewCell: UICollectionViewCell {
     // MARK: -
     // MARK: Variables
     
-    private let imageView = UIImageView()
+    let imageView = UIImageView()
     
     // MARK: -
     // MARK: CollectionViewCell Life Cycle
@@ -43,7 +43,7 @@ final class BannerCollectionViewCell: UICollectionViewCell {
     // MARK: Internal functions
     
     func configure(with model: TopBannerSlideCellModel) {
-        model.handler(.needLoadPoster(model.cover, self.imageView))
+        model.handler(.needLoadPoster(model.cover, self))
     }
     
     // MARK: -

@@ -76,10 +76,16 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
             self.youWillLikeSection = $0.youWillLikeSection
             
             var availableGenres = Set<Genre>()
-            var sortedLibrary = [Genre: [Book]]()
+            var sortedLibrary = Dictionary<Genre, [Book]>()
+            var library = [Book]()
+            
             $0.books.forEach {
                 availableGenres.insert($0.genre)
-                sortedLibrary[$0.genre]?.append($0)
+                if sortedLibrary[$0.genre] == nil {
+                    sortedLibrary[$0.genre] = [$0]
+                } else {
+                    sortedLibrary[$0.genre]?.append($0)
+                }
             }
             
             self.genres = Array(availableGenres)

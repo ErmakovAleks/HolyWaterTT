@@ -26,7 +26,7 @@ struct Book: Codable {
     }
 }
 
-enum Genre: String, Codable {
+enum Genre: String, Codable, Hashable {
     
     case fantasy = "Fantasy"
     case science = "Science"

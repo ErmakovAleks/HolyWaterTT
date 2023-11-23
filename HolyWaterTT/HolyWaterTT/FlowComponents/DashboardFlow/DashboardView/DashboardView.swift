@@ -78,15 +78,31 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
     
     private func handle(events: TopBannerSlideCellModelOutputEvents) {
         switch events {
-        case .needLoadPoster(let url, let imageView):
+        case .needLoadPoster(let url, let cell):
             self.viewModel.fetchPoster(url: url) { result in
                 switch result {
                 case .success(let image):
                     DispatchQueue.main.async {
-                        imageView?.image = image
+                        cell.imageView.image = image
                     }
                 case .failure(_):
-                    imageView?.image = UIImage(systemName: "photo")
+                    cell.imageView.image = UIImage(systemName: "photo")
+                }
+            }
+        }
+    }
+    
+    private func handle(events: BookCellModelOutputEvents) {
+        switch events {
+        case .needLoadPoster(let url, let cell):
+            self.viewModel.fetchPoster(url: url) { result in
+                switch result {
+                case .success(let image):
+                    DispatchQueue.main.async {
+                        cell.imageView.image = image
+                    }
+                case .failure(_):
+                    cell.imageView.image = UIImage(systemName: "photo")
                 }
             }
         }
@@ -99,7 +115,9 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
         self.viewModel.library.bind { [weak self] _ in
             DispatchQueue.main.async {
                 self?.bannerCollectionView?.reloadData()
+                self?.dashboardTableView?.reloadData()
                 self?.startBannerAnimation()
+                self?.pageControlStyle()
             }
         }
         .disposed(by: disposeBag)
@@ -232,7 +250,7 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
     }
     
     private func dashboardStyle() {
-        self.dashboardTableView?.backgroundColor = .systemBlue
+        self.dashboardTableView?.backgroundColor = .clear
     }
     
     private func dashboardLayout() {
@@ -310,21 +328,32 @@ extension DashboardView: UICollectionViewDelegate, UICollectionViewDataSource {
 extension DashboardView: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.genres.count
+        return self.viewModel.orderedLibrary.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.orderedLibrary[section].1.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
+        guard let cell = tableView.dequeueReusableCell(
             withIdentifier: String(describing: DashboardTableViewCell.self),
             for: indexPath
-        )
+        ) as? DashboardTableViewCell else { return UITableViewCell() }
+        
+        cell.configure(with: self.viewModel.orderedLibrary[indexPath.section].1)
+        cell.childNeedPoster = { [weak self] events in
+            self?.handle(events: events)
+        }
         
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.text = self.viewModel.orderedLibrary[section].0.rawValue
+            view.textLabel?.textColor = .white
+            view.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        }
+    }
 }

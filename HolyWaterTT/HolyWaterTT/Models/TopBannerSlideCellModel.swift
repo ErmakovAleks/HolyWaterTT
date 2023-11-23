@@ -9,7 +9,7 @@ import UIKit
 
 enum TopBannerSlideCellModelOutputEvents: Events {
     
-    case needLoadPoster(String, UIImageView?)
+    case needLoadPoster(String, BannerCollectionViewCell)
 }
 
 struct TopBannerSlideCellModel {
