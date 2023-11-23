@@ -12,6 +12,7 @@ import RxRelay
 enum DashboardOutputEvents: Events {
     
     case loadingError(RequestError)
+    case showDetails(Book)
 }
 
 final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
@@ -66,6 +67,10 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
         }
     }
     
+    func showDetails(for book: Book) {
+        self.outputEventsEmiter.accept(.showDetails(book))
+    }
+    
     // MARK: -
     // MARK: Overrided functions
     
@@ -77,7 +82,6 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
             
             var availableGenres = Set<Genre>()
             var sortedLibrary = Dictionary<Genre, [Book]>()
-            var library = [Book]()
             
             $0.books.forEach {
                 availableGenres.insert($0.genre)

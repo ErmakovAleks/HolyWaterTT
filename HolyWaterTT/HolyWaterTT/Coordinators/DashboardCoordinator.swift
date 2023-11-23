@@ -29,6 +29,13 @@ final class DashboardCoordinator: ChildCoordinator {
     override func start() {
         super.start()
         
+        self.navController.pushViewController(self.dashboardView(), animated: true)
+    }
+    
+    // MARK: -
+    // MARK: Dashboard Screen
+    
+    private func dashboardView() -> DashboardView {
         let viewModel = DashboardViewModel(dataService: self.dataService)
         let view = DashboardView(viewModel: viewModel)
         
@@ -37,13 +44,34 @@ final class DashboardCoordinator: ChildCoordinator {
         }
         .disposed(by: self.disposeBag)
         
-        self.navController.pushViewController(view, animated: true)
+        return view
+    }
+    
+    private func handle(events: DashboardOutputEvents) {
+        switch events {
+        case .loadingError(let error):
+            self.showAlert(title: "Error", description: error.localizedDescription)
+        case .showDetails(let book):
+            self.navController.pushViewController(self.detailsView(book: book), animated: true)
+        }
     }
     
     // MARK: -
-    // MARK: Handling Internal Flow Navigation
+    // MARK: Details Screen
     
-    private func handle(events: DashboardOutputEvents) {
+    private func detailsView(book: Book) -> DetailsView {
+        let viewModel = DetailsViewModel()
+        let view = DetailsView(viewModel: viewModel)
+        
+        viewModel.events.bind { [weak self] in
+            self?.handle(events: $0)
+        }
+        .disposed(by: self.disposeBag)
+        
+        return view
+    }
+    
+    private func handle(events: DetailsOutputEvents) {
         
     }
     
