@@ -27,6 +27,7 @@ fileprivate extension Constants {
     static let bannerItemVerticalInset = 20.0
     
     static let pageControlBottomInset = 20.0
+    static let sectionHeaderHeight = 26.0
 }
 
 final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
@@ -89,6 +90,8 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
                     cell.imageView.image = UIImage(systemName: "photo")
                 }
             }
+        case .needShowDetails(let id):
+            self.viewModel.showDetails(for: nil, id: id)
         }
     }
     
@@ -105,6 +108,8 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
                     cell.imageView.image = UIImage(systemName: "photo")
                 }
             }
+        case .needShowDetails(let book):
+            self.viewModel.showDetails(for: book, id: nil)
         }
     }
     
@@ -246,6 +251,11 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
             forCellReuseIdentifier: String(describing: DashboardTableViewCell.self)
         )
         
+        self.dashboardTableView?.register(
+            DashboardTableViewSectionHeader.self,
+            forHeaderFooterViewReuseIdentifier: String(describing: DashboardTableViewSectionHeader.self)
+        )
+        
         self.view.addSubview(self.dashboardTableView ?? UIView())
     }
     
@@ -299,6 +309,11 @@ extension DashboardView: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item % self.viewModel.topBannerSlides.count
+        self.handle(events: .needShowDetails(self.viewModel.topBannerSlides[index].bookID))
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == self.bannerCollectionView {
             let width = scrollView.frame.width
@@ -342,18 +357,24 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
         ) as? DashboardTableViewCell else { return UITableViewCell() }
         
         cell.configure(with: self.viewModel.orderedLibrary[indexPath.section].1)
-        cell.childNeedPoster = { [weak self] events in
+        cell.childNeedAction = { [weak self] events in
             self?.handle(events: events)
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let view = view as? UITableViewHeaderFooterView {
-            view.textLabel?.text = self.viewModel.orderedLibrary[section].0.rawValue
-            view.textLabel?.textColor = .white
-            view.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: String(describing: DashboardTableViewSectionHeader.self)
+        ) as? DashboardTableViewSectionHeader else { return UIView() }
+        
+        view.title.text = self.viewModel.orderedLibrary[section].0.rawValue
+
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.sectionHeaderHeight
     }
 }

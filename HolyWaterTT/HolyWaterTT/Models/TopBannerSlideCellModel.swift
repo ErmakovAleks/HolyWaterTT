@@ -10,6 +10,7 @@ import UIKit
 enum TopBannerSlideCellModelOutputEvents: Events {
     
     case needLoadPoster(String, BannerCollectionViewCell)
+    case needShowDetails(Int)
 }
 
 struct TopBannerSlideCellModel {

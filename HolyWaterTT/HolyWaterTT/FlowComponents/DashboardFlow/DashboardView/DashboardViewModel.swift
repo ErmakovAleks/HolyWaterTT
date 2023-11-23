@@ -67,8 +67,14 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
         }
     }
     
-    func showDetails(for book: Book) {
-        self.outputEventsEmiter.accept(.showDetails(book))
+    func showDetails(for book: Book?, id: Int?) {
+        if let book {
+            self.outputEventsEmiter.accept(.showDetails(book))
+        } else if let id {
+            if let book = self.books.filter({ id == $0.id }).first {
+                self.outputEventsEmiter.accept(.showDetails(book))
+            }
+        }
     }
     
     // MARK: -

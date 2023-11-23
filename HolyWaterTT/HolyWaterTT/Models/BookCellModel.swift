@@ -10,6 +10,7 @@ import UIKit
 enum BookCellModelOutputEvents {
     
     case needLoadPoster(String, DashboardCollectionViewCell)
+    case needShowDetails(Book)
 }
 
 struct BookCellModel {

@@ -14,8 +14,8 @@ fileprivate extension Constants {
     
     static let itemWidth = 120.0
     static let itemHeight = 190.0
-    static let minimumLineSpacing = 24.0
-    static let minimumInteritemSpacing = 8.0
+    static let minimumLineSpacing = 8.0
+    static let minimumInteritemSpacing = 0.0
     static let horizontalSectionInset = 16.0
     static let verticalSectionInset = 0.0
 }
@@ -25,7 +25,7 @@ final class DashboardTableViewCell: UITableViewCell {
     // MARK: -
     // MARK: Variables
     
-    var childNeedPoster: ((BookCellModelOutputEvents) -> ())?
+    var childNeedAction: ((BookCellModelOutputEvents) -> ())?
     
     private var books = BehaviorRelay<[Book]>(value: [])
     private let disposeBag = DisposeBag()
@@ -86,7 +86,9 @@ final class DashboardTableViewCell: UITableViewCell {
     private func handle(events: BookCellModelOutputEvents) {
         switch events {
         case .needLoadPoster(let url, let cell):
-            self.childNeedPoster?(.needLoadPoster(url, cell))
+            self.childNeedAction?(.needLoadPoster(url, cell))
+        case .needShowDetails(let book):
+            self.childNeedAction?(.needShowDetails(book))
         }
     }
     
@@ -118,7 +120,9 @@ final class DashboardTableViewCell: UITableViewCell {
     private func collectionViewLayout() {
         self.collectionView?.snp.makeConstraints {
             $0.height.greaterThanOrEqualTo(Constants.itemHeight)
-            $0.edges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalToSuperview().inset(12.0)
+            $0.bottom.equalToSuperview()
         }
     }
 }
@@ -142,5 +146,9 @@ extension DashboardTableViewCell: UICollectionViewDelegate, UICollectionViewData
         cell.configure(with: model)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.handle(events: .needShowDetails(self.books.value[indexPath.item]))
     }
 }
