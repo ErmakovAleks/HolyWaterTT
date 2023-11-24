@@ -9,7 +9,7 @@ import UIKit
 
 enum BookCellModelOutputEvents {
     
-    case needLoadPoster(String, DashboardCollectionViewCell)
+    case needLoadPoster(String, ImageViewContainable)
     case needShowDetails(Book)
 }
 

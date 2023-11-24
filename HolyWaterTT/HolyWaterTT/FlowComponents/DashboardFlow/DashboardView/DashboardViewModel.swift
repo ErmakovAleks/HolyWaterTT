@@ -12,7 +12,7 @@ import RxRelay
 enum DashboardOutputEvents: Events {
     
     case loadingError(RequestError)
-    case showDetails(Book)
+    case showDetails(Book, HolyLibrary)
 }
 
 final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
@@ -25,6 +25,7 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
     private let dataService: DataService
     
     var library = PublishRelay<HolyLibrary>()
+    var copy: HolyLibrary?
     var books = [Book]()
     var topBannerSlides = [TopBannerSlide]()
     var youWillLikeSection = [Int]()
@@ -68,11 +69,12 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
     }
     
     func showDetails(for book: Book?, id: Int?) {
+        guard let copy else { return }
         if let book {
-            self.outputEventsEmiter.accept(.showDetails(book))
+            self.outputEventsEmiter.accept(.showDetails(book, copy))
         } else if let id {
             if let book = self.books.filter({ id == $0.id }).first {
-                self.outputEventsEmiter.accept(.showDetails(book))
+                self.outputEventsEmiter.accept(.showDetails(book, copy))
             }
         }
     }
@@ -82,6 +84,7 @@ final class DashboardViewModel: BaseViewModel<DashboardOutputEvents> {
     
     override func prepareBindings(bag: DisposeBag) {
         self.library.bind {
+            self.copy = $0
             self.books = $0.books
             self.topBannerSlides = $0.topBannerSlides
             self.youWillLikeSection = $0.youWillLikeSection

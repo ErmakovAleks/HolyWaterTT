@@ -51,16 +51,19 @@ final class DashboardCoordinator: ChildCoordinator {
         switch events {
         case .loadingError(let error):
             self.showAlert(title: "Error", description: error.localizedDescription)
-        case .showDetails(let book):
-            self.navController.pushViewController(self.detailsView(book: book), animated: true)
+        case .showDetails(let book, let library):
+            self.navController.pushViewController(
+                self.detailsView(book: book, library: library),
+                animated: true
+            )
         }
     }
     
     // MARK: -
     // MARK: Details Screen
     
-    private func detailsView(book: Book) -> DetailsView {
-        let viewModel = DetailsViewModel()
+    private func detailsView(book: Book, library: HolyLibrary) -> DetailsView {
+        let viewModel = DetailsViewModel(dataService: self.dataService, book: book, library: library)
         let view = DetailsView(viewModel: viewModel)
         
         viewModel.events.bind { [weak self] in

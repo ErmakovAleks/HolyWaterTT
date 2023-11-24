@@ -55,6 +55,12 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
         self.view.addSubview(self.pseudoLaunchView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -87,10 +93,13 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
                         cell.imageView.image = image
                     }
                 case .failure(_):
-                    cell.imageView.image = UIImage(systemName: "photo")
+                    DispatchQueue.main.async {
+                        cell.imageView.image = UIImage(systemName: "photo")
+                    }
                 }
             }
         case .needShowDetails(let id):
+            self.autoScrollTimer?.invalidate()
             self.viewModel.showDetails(for: nil, id: id)
         }
     }
@@ -109,6 +118,7 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
                 }
             }
         case .needShowDetails(let book):
+            self.autoScrollTimer?.invalidate()
             self.viewModel.showDetails(for: book, id: nil)
         }
     }

@@ -16,12 +16,12 @@ fileprivate extension Constants {
     static let titleFontSize = 15.0
 }
 
-final class DashboardCollectionViewCell: UICollectionViewCell {
+final class DashboardCollectionViewCell: UICollectionViewCell, ImageViewContainable {
     
     // MARK: -
     // MARK: Variables
     
-    let imageView = UIImageView()
+    var imageView = UIImageView()
     private let titleLabel = UILabel()
     
     // MARK: -
