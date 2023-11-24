@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		646A6DFC4DB1F3856CE4BEFA /* Pods_HolyWaterTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C3EB7C5BCEE54928DD9C08 /* Pods_HolyWaterTT.framework */; };
 		D910027B2B0BC57A001C4C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910027A2B0BC57A001C4C61 /* AppDelegate.swift */; };
-		D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910027E2B0BC57A001C4C61 /* ViewController.swift */; };
 		D91002842B0BC57B001C4C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91002832B0BC57B001C4C61 /* Assets.xcassets */; };
 		D91002872B0BC57B001C4C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91002852B0BC57B001C4C61 /* LaunchScreen.storyboard */; };
 		D910028F2B0BC8D8001C4C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D910028E2B0BC8D8001C4C61 /* GoogleService-Info.plist */; };
@@ -31,6 +30,7 @@
 		D94AE3222B10B42800B25CD3 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AE3212B10B42800B25CD3 /* SeparatorView.swift */; };
 		D94AE3242B10C89400B25CD3 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AE3232B10C89400B25CD3 /* UIStackView+Extensions.swift */; };
 		D94AE3262B11357B00B25CD3 /* ReadingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AE3252B11357B00B25CD3 /* ReadingCoordinator.swift */; };
+		D94AE32F2B113E6300B25CD3 /* FirebaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AE32E2B113E6300B25CD3 /* FirebaseContainer.swift */; };
 		D99822DE2B0BD94400F65D8C /* HolyLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */; };
 		D99822E02B0BD96500F65D8C /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822DF2B0BD96500F65D8C /* Book.swift */; };
 		D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */; };
@@ -61,7 +61,6 @@
 		C2C3EB7C5BCEE54928DD9C08 /* Pods_HolyWaterTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HolyWaterTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91002772B0BC57A001C4C61 /* HolyWaterTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolyWaterTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D910027A2B0BC57A001C4C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D910027E2B0BC57A001C4C61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D91002832B0BC57B001C4C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D91002862B0BC57B001C4C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D91002882B0BC57B001C4C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		D94AE3212B10B42800B25CD3 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		D94AE3232B10C89400B25CD3 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		D94AE3252B11357B00B25CD3 /* ReadingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCoordinator.swift; sourceTree = "<group>"; };
+		D94AE32E2B113E6300B25CD3 /* FirebaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContainer.swift; sourceTree = "<group>"; };
 		D99822DD2B0BD94400F65D8C /* HolyLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyLibrary.swift; sourceTree = "<group>"; };
 		D99822DF2B0BD96500F65D8C /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D99822E12B0BD9A700F65D8C /* TopBunnerSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBunnerSlide.swift; sourceTree = "<group>"; };
@@ -161,7 +161,6 @@
 				D99822DC2B0BD92900F65D8C /* Models */,
 				D91002912B0BCA61001C4C61 /* Application */,
 				D91002902B0BC97B001C4C61 /* SupportingFiles */,
-				D910027E2B0BC57A001C4C61 /* ViewController.swift */,
 			);
 			path = HolyWaterTT;
 			sourceTree = "<group>";
@@ -218,6 +217,14 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		D94AE32D2B113E4D00B25CD3 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				D94AE32E2B113E6300B25CD3 /* FirebaseContainer.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		D99822DC2B0BD92900F65D8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +240,7 @@
 		D99822E32B0BDEEB00F65D8C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D94AE32D2B113E4D00B25CD3 /* Firebase */,
 				D99822E72B0BE23C00F65D8C /* NetworkService */,
 				D99822E62B0BE22F00F65D8C /* DataService */,
 			);
@@ -465,6 +473,7 @@
 				D99822E92B0BE25600F65D8C /* RequestError.swift in Sources */,
 				D99823152B0BFF7000F65D8C /* LaunchView.swift in Sources */,
 				D99822FF2B0BE5AB00F65D8C /* Constants.swift in Sources */,
+				D94AE32F2B113E6300B25CD3 /* FirebaseContainer.swift in Sources */,
 				D94AE30F2B0F95F900B25CD3 /* DetailsViewModel.swift in Sources */,
 				D99822F62B0BE41600F65D8C /* NetworkServiceContainable.swift in Sources */,
 				D99822E22B0BD9A700F65D8C /* TopBunnerSlide.swift in Sources */,
@@ -481,7 +490,6 @@
 				D92E68FC2B0D0775000D8E88 /* CenterSnapCollectionViewFlowLayout.swift in Sources */,
 				D99822EB2B0BE29000F65D8C /* HTTPMethod.swift in Sources */,
 				D94AE3112B0F964300B25CD3 /* DetailsView.swift in Sources */,
-				D910027F2B0BC57A001C4C61 /* ViewController.swift in Sources */,
 				D94AE3132B0F994F00B25CD3 /* DashboardTableViewSectionHeader.swift in Sources */,
 				D94AE3162B0FD69B00B25CD3 /* HeadCollectionViewFlowLayout.swift in Sources */,
 				D99823172B0C045A00F65D8C /* UIFont+Extensions.swift in Sources */,
