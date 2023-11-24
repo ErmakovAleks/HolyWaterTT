@@ -11,15 +11,13 @@ import RxRelay
 
 enum DashboardCoordinatorOutputEvents: Events {
     
-    case needPayment
+    case read(Book)
 }
 
-final class DashboardCoordinator: ChildCoordinator {
+final class DashboardCoordinator: ChildCoordinator<DashboardCoordinatorOutputEvents> {
     
     // MARK: -
     // MARK: Variables
-    
-    public let events = PublishRelay<DashboardCoordinatorOutputEvents>()
     
     private let dataService = DataService()
     
@@ -75,7 +73,20 @@ final class DashboardCoordinator: ChildCoordinator {
     }
     
     private func handle(events: DetailsOutputEvents) {
-        
+        switch events {
+        case .loadingError(let error):
+            self.showAlert(title: "Error", description: error.localizedDescription)
+        case .showDetails(let book, let library):
+            self.navController.pushViewController(
+                self.detailsView(book: book, library: library),
+                animated: true
+            )
+        case .read(let book):
+//            Тут має бути реалізоване викидання події нагору, на головний Координатор,
+//            звідки запуститься ReadingFlow, а поки маємо просто баннер
+//            self.outputEventsEmiter.accept(.read(book))
+            self.showAlert(title: "Увага!", description: "Тут уже мала би бути навігація до книжки")
+        }
     }
     
     // MARK: -

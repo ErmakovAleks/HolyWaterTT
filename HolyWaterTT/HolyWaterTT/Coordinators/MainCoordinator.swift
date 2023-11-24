@@ -27,7 +27,7 @@ final class MainCoordinator: BaseCoordinator {
     }
     
     // MARK: -
-    // MARK: Private functions
+    // MARK: Dashboard Flow
     
     private func dashboardFlow() -> DashboardCoordinator {
         let dashboardCoordinator = DashboardCoordinator()
@@ -40,6 +40,29 @@ final class MainCoordinator: BaseCoordinator {
     }
     
     private func handle(events: DashboardCoordinatorOutputEvents) {
+        switch events {
+        case .read(_):
+            let readingCoordinator = readingFlow()
+            readingCoordinator.navController = self
+            
+            self.pushViewController(readingCoordinator, animated: true)
+        }
+    }
+    
+    // MARK: -
+    // MARK: Reading Flow
+    
+    private func readingFlow() -> ReadingCoordinator {
+        let readingCoordinator = ReadingCoordinator()
+        readingCoordinator.events.bind { [weak self] in
+            self?.handle(events: $0)
+        }
+        .disposed(by: self.disposeBag)
         
+        return readingCoordinator
+    }
+    
+    private func handle(events: ReadingCoordinatorOutputEvents) {
+       
     }
 }

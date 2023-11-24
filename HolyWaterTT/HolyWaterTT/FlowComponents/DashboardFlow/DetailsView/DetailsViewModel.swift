@@ -11,6 +11,9 @@ import RxRelay
 
 enum DetailsOutputEvents: Events {
     
+    case loadingError(RequestError)
+    case showDetails(Book, HolyLibrary)
+    case read(Book)
 }
 
 final class DetailsViewModel: BaseViewModel<DetailsOutputEvents> {
@@ -31,6 +34,7 @@ final class DetailsViewModel: BaseViewModel<DetailsOutputEvents> {
     var youWillLikeSection = [Int]()
     var genres = [Genre]()
     var sortedLibrary = [Genre : [Book]]()
+    var recommended = [Book]()
     
     // MARK: -
     // MARK: Initialization
@@ -61,6 +65,14 @@ final class DetailsViewModel: BaseViewModel<DetailsOutputEvents> {
         }
     }
     
+    func showDetails(for book: Book) {
+        self.outputEventsEmiter.accept(.showDetails(book, self.library))
+    }
+    
+    func read(book: Book) {
+        self.outputEventsEmiter.accept(.read(book))
+    }
+    
     // MARK: -
     // MARK: Overrided functions
     
@@ -88,6 +100,8 @@ final class DetailsViewModel: BaseViewModel<DetailsOutputEvents> {
                 self.sortedLibrary[$0.genre]?.append($0)
             }
         }
+        
+        self.recommended = self.library.books.filter { self.youWillLikeSection.contains($0.id) }
         
         self.genres = Array(availableGenres)
     }

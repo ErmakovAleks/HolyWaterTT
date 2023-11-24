@@ -23,6 +23,9 @@ fileprivate extension Constants {
     static let authorLabelTopOffset = 4.0
     
     static let headCollectionLayoutCoefficient = 1.5
+    
+    static let infoBoardCornerRadius = 22.0
+    static let infoBoardTopOffset = 18.0
 }
 
 final class DetailsView: BaseView<DetailsViewModel, DetailsOutputEvents> {
@@ -33,6 +36,9 @@ final class DetailsView: BaseView<DetailsViewModel, DetailsOutputEvents> {
     private var headCollectionView: UICollectionView?
     private let titleLabel = UILabel()
     private let authorLabel = UILabel()
+    private let infoBoardView = InfoBoardView()
+    
+    private var currentHeadCollectionIndex = -1
     
     // MARK: -
     // MARK: Overrided functions
@@ -59,17 +65,20 @@ final class DetailsView: BaseView<DetailsViewModel, DetailsOutputEvents> {
         self.navigationBarSetup()
         self.headCollectionViewSetup()
         self.labelsSetup()
+        self.infoBoardSetup()
     }
     
     override func style() {
         self.view.backgroundColor = .deepPurple
         self.headCollectionViewStyle()
         self.labelsStyle()
+        self.infoBoardStyle()
     }
     
     override func layout() {
         self.headCollectionViewLayout()
         self.labelsLayout()
+        self.infoBoardLayout()
     }
     
     // MARK: -
@@ -88,8 +97,8 @@ final class DetailsView: BaseView<DetailsViewModel, DetailsOutputEvents> {
                     cell.imageView.image = UIImage(systemName: "photo")
                 }
             }
-        case .needShowDetails(_):
-            fatalError()
+        case .needShowDetails(let book):
+            self.viewModel.showDetails(for: book)
         }
     }
     
@@ -192,6 +201,30 @@ final class DetailsView: BaseView<DetailsViewModel, DetailsOutputEvents> {
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(Constants.authorLabelTopOffset)
         }
     }
+    
+    // MARK: -
+    // MARK: Prepare InfoBoard
+    
+    private func infoBoardSetup() {
+        self.infoBoardView.handler = { [weak self] book in
+            self?.viewModel.read(book: book)
+        }
+        
+        self.view.addSubview(self.infoBoardView)
+    }
+    
+    private func infoBoardStyle() {
+        self.infoBoardView.layer.cornerRadius = Constants.infoBoardCornerRadius
+        self.infoBoardView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        self.infoBoardView.clipsToBounds = true
+    }
+    
+    private func infoBoardLayout() {
+        self.infoBoardView.snp.makeConstraints {
+            $0.horizontalEdges.bottom.equalToSuperview()
+            $0.top.equalTo(self.authorLabel.snp.bottom).offset(Constants.infoBoardTopOffset)
+        }
+    }
 }
 
 extension DetailsView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -221,9 +254,17 @@ extension DetailsView: UICollectionViewDelegate, UICollectionViewDataSource {
         if scrollView == self.headCollectionView {
             let width = scrollView.frame.width
             let index = Int(((scrollView.contentOffset.x + width / 2) * Constants.headCollectionLayoutCoefficient) / width)
-            if let genreBooks = self.viewModel.sortedLibrary[self.viewModel.book.genre] {
-                self.titleLabel.text = genreBooks[index].name
-                self.authorLabel.text = genreBooks[index].author
+            if index != self.currentHeadCollectionIndex {
+                if let genreBooks = self.viewModel.sortedLibrary[self.viewModel.book.genre] {
+                    self.titleLabel.text = genreBooks[index].name
+                    self.authorLabel.text = genreBooks[index].author
+                    
+                    self.infoBoardView.configure(with: genreBooks[index], and: self.viewModel.recommended) { [weak self] events in
+                        self?.handle(events: events)
+                    }
+                }
+                
+                self.currentHeadCollectionIndex = index
             }
         }
     }

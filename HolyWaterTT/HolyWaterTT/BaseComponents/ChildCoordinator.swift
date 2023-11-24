@@ -7,14 +7,20 @@
 
 import UIKit
 import RxSwift
+import RxRelay
 
-public class ChildCoordinator: UIViewController {
+public class ChildCoordinator<OutputEventsType: Events>: UIViewController {
     
     // MARK: -
     // MARK: Variables
     
     public var navController = UINavigationController()
     public let disposeBag = DisposeBag()
+    
+    internal let outputEventsEmiter = PublishRelay<OutputEventsType>()
+    public var events: Observable<OutputEventsType> {
+        return self.outputEventsEmiter.asObservable()
+    }
     
     // MARK: -
     // MARK: View Life Cycle

@@ -68,6 +68,12 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
         self.startBannerAnimation()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.autoScrollTimer?.invalidate()
+    }
+    
     // MARK: -
     // MARK: Private functions
     
@@ -132,7 +138,7 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
                 self?.bannerCollectionView?.reloadData()
                 self?.dashboardTableView?.reloadData()
                 self?.startBannerAnimation()
-                self?.pageControlStyle()
+                self?.pageControl.numberOfPages = self?.viewModel.topBannerSlides.count ?? 0
             }
         }
         .disposed(by: disposeBag)
@@ -236,7 +242,6 @@ final class DashboardView: BaseView<DashboardViewModel, DashboardOutputEvents> {
     }
     
     private func pageControlStyle() {
-        self.pageControl.numberOfPages = self.viewModel.topBannerSlides.count
         self.pageControl.currentPage = 0
         self.pageControl.currentPageIndicatorTintColor = .lovePink
         self.pageControl.pageIndicatorTintColor = .inactiveGrey
@@ -366,8 +371,7 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
             for: indexPath
         ) as? DashboardTableViewCell else { return UITableViewCell() }
         
-        cell.configure(with: self.viewModel.orderedLibrary[indexPath.section].1)
-        cell.childNeedAction = { [weak self] events in
+        cell.configure(with: self.viewModel.orderedLibrary[indexPath.section].1) { [weak self] events in
             self?.handle(events: events)
         }
         

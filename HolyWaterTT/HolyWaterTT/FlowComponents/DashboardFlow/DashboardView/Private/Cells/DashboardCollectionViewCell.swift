@@ -46,9 +46,12 @@ final class DashboardCollectionViewCell: UICollectionViewCell, ImageViewContaina
     // MARK: -
     // MARK: Internal functions
     
-    func configure(with model: BookCellModel) {
-        self.titleLabel.text = model.name
+    func configure(with model: BookCellModel, isBlack: Bool? = nil) {
         model.handler(.needLoadPoster(model.coverURL, self))
+        self.titleLabel.text = model.name
+        if let isBlack {
+            self.titleLabel.textColor = .textBlack
+        }
     }
     
     // MARK: -

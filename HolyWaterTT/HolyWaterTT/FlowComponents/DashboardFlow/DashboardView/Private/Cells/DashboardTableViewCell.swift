@@ -70,8 +70,9 @@ final class DashboardTableViewCell: UITableViewCell {
     // MARK: -
     // MARK: Internal functons
     
-    func configure(with models: [Book]) {
+    func configure(with models: [Book], completion: @escaping ((BookCellModelOutputEvents) -> ())) {
         self.books.accept(models)
+        self.childNeedAction = completion
     }
     
     // MARK: -
